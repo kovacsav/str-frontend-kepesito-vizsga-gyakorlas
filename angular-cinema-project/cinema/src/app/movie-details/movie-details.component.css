@@ -1,0 +1,15 @@
+.card {
+  background-color: rgb(73, 73, 65);
+  margin: 3% auto;
+  padding: 1rem;
+  width: 650px;
+}
+
+img {
+  margin: 3% auto;
+  width: 90%;
+}
+h3 {
+  color: rgb(214, 176, 106);
+  text-align: center;
+}

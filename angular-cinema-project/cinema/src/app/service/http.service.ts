@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Movie } from '../model/movie';
 
 @Injectable({
   providedIn: 'root'
@@ -6,14 +9,17 @@ import { Injectable } from '@angular/core';
 export class HttpService {
 
   BASE_URL = 'http://localhost:3000/movies';
+  apiUrl: string = 'https://testserver/kvgabi4/movies';
 
-  constructor(undefined) { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  getMovieList():any {
-    return null;
+  getMovieList(): Observable<Movie[]> {
+    return this.http.get<Movie[]>(this.apiUrl);
   }
 
-  deleteMovie(id):any {
-    return null;
+  deleteMovie(id: number):Observable<Movie> {
+    return this.http.delete<Movie>(`${this.apiUrl}/${id}`);
   }
 }

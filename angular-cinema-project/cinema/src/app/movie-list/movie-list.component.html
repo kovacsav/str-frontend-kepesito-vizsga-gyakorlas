@@ -10,7 +10,16 @@
           </tr>
         </thead>
         <tbody>
-          <tr class="table-row"></tr>
+          <tr class="table-row" *ngFor="let movie of movies">
+            <td>{{movie.title}}</td>
+            <td>{{movie.year}}</td>
+            <td>{{movie.category}}</td>
+            <td>
+              <button class="btn btn-danger" id="delete-button" (click)="deleteMovie(movie)">
+                Delete
+              </button>
+            </td>
+          </tr>
         </tbody>
     </table>
 </section>
